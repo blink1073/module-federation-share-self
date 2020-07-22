@@ -16,15 +16,16 @@ module.exports = {
     },
   plugins: [
     new ModuleFederationPlugin({
-      name: "app",
-      library: { type: "var", name: "app"
+      name: "module-federation-share-self",
+      library: {
+        type: "var", name: "module-federation-share-self"
             },
       filename: "remoteEntry.js",
       exposes: {
                 "./index": "./index",
             },
       shared: {
-            "app": { singleton: true },
+            "module-federation-share-self": { singleton: true },
             "react": { singleton: true }
         },
       }),
