@@ -25,7 +25,11 @@ module.exports = {
                 "./index": "./index",
             },
       shared: {
-            "module-federation-share-self": { singleton: true },
+        "./index": {
+            shareKey: "module-federation-share-self",
+            version: require("./package.json").version,
+            singleton: true
+          },
             "react": { singleton: true }
         },
       }),
